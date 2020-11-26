@@ -1,0 +1,57 @@
+{% extends 'portfolio/base.html' %}
+{% block content  %}
+{% load static %}
+<h1>Hello Universe</h1>
+<img src="{% static 'portfolio/home.png' %}" height=300>
+<h2>Projects</h2>
+<div class="bd-example">
+  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleInterval" data-slide-to="0" class="active"></li>
+        {% for i in range%}
+      <li data-target="#carouselExampleInterval" data-slide-to="{{i}}"></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+<div class="carousel-item active" data-interval="4000">
+  {% if firstproject.url %}
+            <a href="{{firstproject.url}}">
+        <img src="{{firstproject.image.url}}" class="d-block w-100" alt="{{firstproject.url}}">
+        </a>
+  {% else %}
+          <img src="{{firstproject.image.url}}" class="d-block w-100">
+  {% endif %}
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{firstproject.title}}</h5>
+          <p>{{firstproject.description}}</p>
+        </div>
+      </div>
+{% for project in projects %}
+<div class="carousel-item" data-interval="4000">
+  {% if project.url %}
+    <a href="{{project.url}}">
+        <img src="{{project.image.url}}" class="d-block w-100" alt="{{project.url}}">
+        </a>
+  {% else %}
+          <img src="{{project.image.url}}" class="d-block w-100">
+  {% endif %}
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{project.title}}</h5>
+          <p>{{project.description}}</p>
+        </div>
+      </div>
+{% endfor %}
+
+          </div>
+    <label class="carousel-control-prev" role="button" href="#carouselExampleInterval" data-slide="prev">
+      <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </label>
+    <label class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </label>
+  </div>
+</div>
+<br><br>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'portfolio/base.html' %}
+{% block content  %}
+<h1>Yasser has written {{ blogs.count }} blog{{blogs.count|pluralize}}</h1>
+{% for blog in blogs %}
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
+<h4>Score: {{blog.score|floatformat}}/10</h4>
+<img src="{{blog.image.url}}">
+<br>
+{{blog.description|truncatechars:200|wordwrap:120|linebreaks}}
+{% endfor %}
+{% endblock %}

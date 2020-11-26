@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content  %}
+<br>
+<div>
+<img src="{% static 'portfolio/test.png' %}"><br>
+<a class="btn btn-outline-primary my-2 my-sm-0 pull-right btn-lg"  href="{% url 'home' %}">Home</a>
+</div>
+{% endblock  %}

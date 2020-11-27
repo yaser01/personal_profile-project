@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'chd!neu*d^gw1*j_v+$k%4*2cjnprxj4bth+0jtynj5yc=mon0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+DEBUG = False
 
 ALLOWED_HOSTS = ['yaser01.pythonanywhere.com']
 
@@ -114,15 +114,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT =BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 try:
     from .local_settings import *
 except ImportError:
     print("We are on production !")
-    
-    
-
-    
-    

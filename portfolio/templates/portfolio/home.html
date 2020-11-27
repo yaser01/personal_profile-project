@@ -2,56 +2,58 @@
 {% block content  %}
 {% load static %}
 <h1>Hello Universe</h1>
-<img src="{% static 'portfolio/home.png' %}" height=300>
+<img height=300 src="{% static 'portfolio/home.png' %}">
 <h2>Projects</h2>
 <div class="bd-example">
-  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleInterval" data-slide-to="0" class="active"></li>
-        {% for i in range%}
-      <li data-target="#carouselExampleInterval" data-slide-to="{{i}}"></li>
-        {% endfor %}
-    </ol>
-    <div class="carousel-inner">
-<div class="carousel-item active" data-interval="4000">
-  {% if firstproject.url %}
-            <a href="{{firstproject.url}}">
-        <img src="{{firstproject.image.url}}" class="d-block w-100" alt="{{firstproject.url}}">
-        </a>
-  {% else %}
-          <img src="{{firstproject.image.url}}" class="d-block w-100">
-  {% endif %}
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{firstproject.title}}</h5>
-          <p>{{firstproject.description}}</p>
-        </div>
-      </div>
-{% for project in projects %}
-<div class="carousel-item" data-interval="4000">
-  {% if project.url %}
-    <a href="{{project.url}}">
-        <img src="{{project.image.url}}" class="d-block w-100" alt="{{project.url}}">
-        </a>
-  {% else %}
-          <img src="{{project.image.url}}" class="d-block w-100">
-  {% endif %}
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{project.title}}</h5>
-          <p>{{project.description}}</p>
-        </div>
-      </div>
-{% endfor %}
+    <div class="carousel slide" data-ride="carousel" id="carouselExampleInterval">
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#carouselExampleInterval"></li>
+            {% for i in range%}
+            <li data-slide-to="{{i}}" data-target="#carouselExampleInterval"></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="4000">
+                {% if firstproject.url %}
+                <a href="{{firstproject.url}}">
+                    <img alt="{{firstproject.url}}" class="d-block w-100" src="{{firstproject.image.url}}">
+                </a>
+                {% else %}
+                <img class="d-block w-100" src="{{firstproject.image.url}}">
+                {% endif %}
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{firstproject.title}}</h5>
+                    <p>{{firstproject.description}}</p>
+                </div>
+            </div>
+            {% for project in projects %}
+            <div class="carousel-item" data-interval="4000">
+                {% if project.url %}
+                <a href="{{project.url}}">
+                    <img alt="{{project.url}}" class="d-block w-100" src="{{project.image.url}}">
+                </a>
+                {% else %}
+                <img class="d-block w-100" src="{{project.image.url}}">
+                {% endif %}
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{project.title}}</h5>
+                    <p>{{project.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
 
-          </div>
-    <label class="carousel-control-prev" role="button" href="#carouselExampleInterval" data-slide="prev" style="background-color: Grey ;opacity: 0.5" >
-      <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
-      <span class="sr-only" >Previous</span>
-    </label>
-    <label class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next" style="background-color: Grey ;opacity: 0.5">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </label>
-  </div>
+        </div>
+        <label class="carousel-control-prev" data-slide="prev" href="#carouselExampleInterval" role="button"
+               style="background-color: Grey ;opacity: 0.5">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+        </label>
+        <label class="carousel-control-next" data-slide="next" href="#carouselExampleInterval" role="button"
+               style="background-color: Grey ;opacity: 0.5">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+        </label>
+    </div>
 </div>
 <br><br>
 {% endblock %}

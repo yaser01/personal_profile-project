@@ -14,14 +14,16 @@
     <title>Yato San</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-light bg-light" >
+    <div class="navbar-brand mb-0 h1">
   <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+</div>
+    <div class="my-0 my-lg-0 ">
 
-    <div class="navbar-header justify-content-end" >
-        <a class="btn  my-2 my-sm-0 pull-right" href="https://t.me/yaser01">Telegram</a>
-        <a class="btn  my-2 my-sm-0 pull-right" href="https://twitter.com/yasserm001">Twitter</a>
-        <a class="btn  my-2 my-sm-0 pull-right" href="{% static 'portfolio/selenium.pdf' %}">Selenium</a>
-      <a class="btn btn-outline-primary my-2 my-sm-0 pull-right" href="{% url 'blog:all_blogs' %}">Blogs</a>
+       <a class="btn mr-sm-n2  my-sm-0 pull-right" href="https://t.me/yaser01">Telegram</a>
+         <a class="btn mr-sm-n2 my-sm-0 pull-right" href="https://twitter.com/yasserm001">Twitter</a>
+         <a class="btn mr-sm-n2 my-sm-0 pull-right" href="{% static 'portfolio/selenium.pdf' %}">Selenium</a>
+        <a class="btn mr-sm-n2 btn-outline-primary  my-sm-0 pull-right" href="{% url 'blog:all_blogs' %}">Blogs</a>
 </div>
 </nav>
 <div class="container text-center">

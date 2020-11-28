@@ -1,0 +1,30 @@
+{% extends 'meme/base.html' %}
+{% block content  %}
+{% load static %}
+<div class="row">
+    <div class="col-sm-4">
+        <div class="placeBox">
+            <div class="imgBx">
+                <img src="{% static 'meme/1.jpg' %}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="placeBox">
+            <div class="imgBx">
+                <img src="{% static 'meme/2.jpg' %}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="placeBox">
+            <div class="imgBx">
+                <img src="{% static 'meme/3.jpg' %}" class="img-fluid">
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

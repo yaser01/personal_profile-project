@@ -18,13 +18,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from meme import views as meme_view
 from portfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('blog/', include('blog.urls')),
-    path('404.html/', views.page_404)
+    path('404.html/', views.page_404),
+    path('meme/', meme_view.home)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
